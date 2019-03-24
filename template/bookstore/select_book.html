@@ -1,0 +1,21 @@
+{% extends "bookbase.html" %}
+{% block content %}
+      
+  <div class="media border p-3" style = "border:2px solid gray; border-radius: 8%; width:80%; background-color: rgba(242, 242, 242,0.4) ;padding:20px">
+    <img src = {{object.image.url}} alt = "booknahihai" class="rounded-circle" style="height: 200px; width: 200px;">
+    <div class="media-body" style="position: relative;padding-left: 19%;">
+      <h1><a class="mr-2" href="#" style="color:blue; width:autopx; text-decoration: none;">{{ object.book_name }}</a></h1>
+      <small>{{ book.owner_name }}</small><small><i>Posted on {{ book.date }}</i></small>
+      <p class="article-content">{{ book.comment }}</p>  
+      <h3><i class="fa fa-phone" style="font-size:36px;color:green"></i>{{book.contact_no}}</h3>
+      <h2><strong>&#8377</strong>{{book.price}}</h2>       
+    </div>
+    
+    <div style="padding: 20px;">
+      <!-- <a class="btn btn-secondary btn-sm mt-1 mb-1" href="#">Update</a> -->
+      <a class="btn btn-info btn-sm mt-1 mb-1" href="{% url 'book-delete' object.id %}">Buy</a>
+    </div>
+    
+  </div>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 style="background-color: grey; color:white">Here is the details about the product</h1>
+{{ obtt.title }}
+{% if obtt.description %}
+	{{obtt.description}}
+{% else %}
+	<p>des comming soon</p>
+
+
+{% endif %}
+
+{{ obtt.price }}
+{% endblock %}

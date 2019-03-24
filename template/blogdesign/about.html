@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+{% if title %}
+	<title>django_title={{title}}</title>
+{% else %}
+	<title>django_title</title>
+{% endif %}
+
+{% endblock title %}
+{% block content %}
+<h1>Home Page</h1>
+{% for i in post %}
+	<h1>{{ i.title }}</h1>
+	<p>My name is {{ i.author }} and content is {{ i.content }}</p>
+	<p>Date of post is {{i.date }}</p>
+{% endfor %}
+{% endblock content %}

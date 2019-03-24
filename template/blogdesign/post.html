@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+    
+  <article class="media content-section">
+    <div class="media-body">
+    	<hr style="color:blue;"> 
+      <div class="article-metadata">
+        <a class="mr-2" href="#" style="display:block; background-color: #f6f6f6; color:blue; width:300px; text-decoration: none;">{{ post.author }}</a>
+        <small class="text-muted">{{ post.date }}</small>
+        {%  if object.author == user %}
+          <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+          </div>
+        {%  endif %}
+      </div>
+
+      <h2 class="article-title">{{ post.title }}</h2>
+      
+      <p class="article-content">{{ post.content }}</p>
+    </div>
+  </article>
+    
+{% endblock content %}

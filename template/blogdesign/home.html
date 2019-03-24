@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for post in post %}
+        <article class="media content-section">
+          <div class="media-body">
+          	<hr style="color:blue;"> 
+            <div class="article-metadata">
+              <a class="mr-2" href="#" style="display:block; background-color: #f6f6f6; color:blue; width:300px; text-decoration: none;">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date }}</small>
+            </div>
+
+            <h2><a class="article-title" href="{% url 'post-content' post.id %}">{{ post.title }}</a></h2>
+            
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
